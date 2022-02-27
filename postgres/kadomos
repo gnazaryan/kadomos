@@ -1,0 +1,58 @@
+-- Database: kadomos
+
+-- DROP DATABASE IF EXISTS kadomos;
+
+CREATE DATABASE kadomos
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'en_US.UTF-8'
+    LC_CTYPE = 'en_US.UTF-8'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+
+-- Table: public.transaction_a
+
+-- DROP TABLE IF EXISTS public.transaction_a;
+
+CREATE TABLE IF NOT EXISTS public.transaction_a
+(
+    id bigint NOT NULL DEFAULT nextval('transaction_id_seq'::regclass),
+    balance real,
+    created_date bigint,
+    description character varying(255) COLLATE pg_catalog."default",
+    modified_date bigint,
+    value real,
+    type text COLLATE pg_catalog."default",
+    CONSTRAINT transaction_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.transaction_a
+    OWNER to postgres;
+
+
+
+-- Table: public.transaction_b
+
+-- DROP TABLE IF EXISTS public.transaction_b;
+
+CREATE TABLE IF NOT EXISTS public.transaction_b
+(
+    id bigint NOT NULL DEFAULT nextval('transaction_id_seq'::regclass),
+    balance real,
+    created_date bigint,
+    description character varying(255) COLLATE pg_catalog."default",
+    modified_date bigint,
+    value real,
+    type text COLLATE pg_catalog."default",
+    CONSTRAINT transaction_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.transaction_b
+    OWNER to postgres;
