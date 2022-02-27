@@ -26,7 +26,7 @@ On the other hand, there is also a Redirect version of the implementation which 
 
     
 
-5. In each application directory (api-gw, service-a, service-b) run the spring-boot:run command
+5. In each application directory (api-gw, service-a, service-b) run the spring-boot:run command on a separate terminal
 
 
     cd ./api-gw
