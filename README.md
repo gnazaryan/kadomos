@@ -81,6 +81,7 @@ Below you can see the details on how the testings can be performed.
     Decrease balance using Passthrough 
     
     http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6
+    
     http://localhost:8080/savings/decrease?accountName=ACCOUNT_B&amount=17.6
 
     
