@@ -9,7 +9,72 @@
 			"name": "api-gw",
 			"item": [
 				{
-					"name": "Transaction",
+					"name": "Balance - Passthrough",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gateway/balance?accountName=ACCOUNT_A",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateway",
+								"balance"
+							],
+							"query": [
+								{
+									"key": "accountName",
+									"value": "ACCOUNT_A"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase - Passthrough",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Decrease - Passthrough",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"savings",
+								"decrease"
+							],
+							"query": [
+								{
+									"key": "accountName",
+									"value": "ACCOUNT_A"
+								},
+								{
+									"key": "amount",
+									"value": "17.6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transaction - Redirect",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -47,7 +112,7 @@
 					"response": []
 				},
 				{
-					"name": "Balance",
+					"name": "Balance - Redirect",
 					"request": {
 						"method": "GET",
 						"header": [],

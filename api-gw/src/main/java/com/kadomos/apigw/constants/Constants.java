@@ -16,6 +16,20 @@ public class Constants {
         String SERVICE_B_LOCATION = "http://localhost:8082/";
     }
 
+    public interface TRANSACTION_TYPE {
+        String CREDIT = "CREDIT";
+        String DEBIT = "DEBIT";
+        String CREDIT_L = "credit";
+        String DEBIT_L = "debit";
+    }
+
+    public interface REQUEST_PROPERTIES {
+        String ACCOUNT_NAME = "accountName";
+        String DESCRIPTION = "description";
+        String AMOUNT = "amount";
+        String TYPE = "type";
+    }
+
     //Mapping for the account to the address and port number th e account is located
     public static Map<String, String> ACCOUNT_ADDRESS_MAPPING = new ImmutableMap.Builder<String, String>()
             .put(KADOMOS_ACCOUNTS.ACCOUNT_A, KADOMOS_ACCOUNTS.SERVICE_A_LOCATION)
