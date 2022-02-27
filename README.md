@@ -27,12 +27,15 @@ On the other hand, there is also a Redirect version of the implementation which 
 
 
     cd ./api-gw
+
     ./mvnw spring-boot:run
     
     cd ../service-a
+
     ./mvnw spring-boot:run
     
     cd ../service-b
+
     ./mvnw spring-boot:run
 
 
@@ -45,22 +48,35 @@ Below you can see the details on how the testings can be performed.
    
 
     Parameters: 
+
     accountName - ACCOUNT_A || ACCOUNT_B
+
     amount - 56.7
+
     
     Balance using Passthrough - http://localhost:8080/savings/balance?accountName=ACCOUNT_A
+
     Increase balance using Passthrough - http://localhost:8080/savings/increase?accountName=ACCOUNT_A&amount=17.6
+
     Decrease balance using Passthrough - http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6
+
     
     
     Parameters:
+
     accountName - ACCOUNT_A || ACCOUNT_B
+
     description - Description for the transaction
+
     amount - 56.7
+
     type = DEBIT || CREDIT
+
     
     Balance using redirect - http://localhost:8080/gateway/balance?accountName=ACCOUNT_A
+
     Transaction using redirect - http://localhost:8080/gateway/transaction?accountName=ACCOUNT_A&description=Description&amount=26.6&type=CREDIT
+
 
 
 
