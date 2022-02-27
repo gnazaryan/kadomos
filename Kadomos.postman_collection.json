@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "7f152e25-9be1-4fc3-a9d9-f8b5a20be1d4",
+		"name": "Kadomos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-gw",
+			"item": [
+				{
+					"name": "Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gateway/transaction?accountName=ACCOUNT_A&description=Description&amount=26.6&type=CREDIT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateway",
+								"transaction"
+							],
+							"query": [
+								{
+									"key": "accountName",
+									"value": "ACCOUNT_A"
+								},
+								{
+									"key": "description",
+									"value": "Description"
+								},
+								{
+									"key": "amount",
+									"value": "26.6"
+								},
+								{
+									"key": "type",
+									"value": "CREDIT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gateway/balance?accountName=ACCOUNT_A",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateway",
+								"balance"
+							],
+							"query": [
+								{
+									"key": "accountName",
+									"value": "ACCOUNT_A"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Welcome API GateWay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Welcome Account A",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Welcome Account B",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082"
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
