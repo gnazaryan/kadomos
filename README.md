@@ -100,13 +100,13 @@ Below you can see the details on how the testings can be performed.
     
     http://localhost:8080/gateway/balance?accountName=ACCOUNT_A
     
-    http://localhost:8080/gateway/balance?accountName=ACCOUNT_A
+    http://localhost:8080/gateway/balance?accountName=ACCOUNT_B
 
     Transaction using redirect
     
     http://localhost:8080/gateway/transaction?accountName=ACCOUNT_A&description=Description&amount=26.6&type=CREDIT
 
-    http://localhost:8080/gateway/transaction?accountName=ACCOUNT_A&description=Description&amount=26.6&type=CREDIT
+    http://localhost:8080/gateway/transaction?accountName=ACCOUNT_B&description=Description&amount=26.6&type=CREDIT
 
 
 
