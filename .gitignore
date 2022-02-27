@@ -1,0 +1,9 @@
+/api-gw/target/
+/api-gw/.idea/
+/api-gw/.mvn/
+/service-a/.idea/
+/service-a/.mvn/
+/service-a/target/
+/service-b/.idea/
+/service-b/.mvn/
+/service-b/target/
