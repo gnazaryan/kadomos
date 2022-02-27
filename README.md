@@ -13,12 +13,15 @@ On the other hand, there is also a Redirect version of the implementation which 
     
 
     cd ./api-gw
+
     ./mvnw clean package
     
     cd ../service-a
+
     ./mvnw clean package
     
     cd ../service-b
+
     ./mvnw clean package
 
     
@@ -46,6 +49,15 @@ Below you can see the details on how the testings can be performed.
 1. Recommended: Use Postman application (https://www.postman.com/) to import the request collection that was developed as part of the project. The Postman collection can be found in the following location in the project (kadomos/Kadomos.postman_collection.json). After making sure all servers are run import the Postman collection and sent requests to the api's.
 2. You can also try using the below url samples to execute api's on your convenient browser.
    
+
+    Check the services are running use the following:
+
+    Welcome API GateWay - http://localhost:8080
+
+    Welcome Account A - http://localhost:8081
+
+    Welcome Account B - http://localhost:8082
+
 
     Parameters: 
 
