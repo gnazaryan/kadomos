@@ -12,4 +12,8 @@ public class Convenience {
     public static Boolean isNotNullOrEmptyMap(Map input) {
         return input != null && !input.isEmpty();
     }
+
+    public static Boolean hasValue(String input) {
+        return input != null && !input.isEmpty();
+    }
 }

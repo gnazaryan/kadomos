@@ -9,12 +9,68 @@
 			"name": "api-gw",
 			"item": [
 				{
+					"name": "Authenticate",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"sessionId\", jsonData.sessionId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "root",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "kadomos",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/authentication/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authentication",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Balance - Passthrough",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/gateway/balance?accountName=ACCOUNT_A",
+							"raw": "http://localhost:8080/gateway/balance?accountName=ACCOUNT_A&sessionId={{sessionId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -28,6 +84,10 @@
 								{
 									"key": "accountName",
 									"value": "ACCOUNT_A"
+								},
+								{
+									"key": "sessionId",
+									"value": "{{sessionId}}"
 								}
 							]
 						}
@@ -39,7 +99,32 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/savings/increase?accountName=ACCOUNT_A&amount=23.4&sessionId={{sessionId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"savings",
+								"increase"
+							],
+							"query": [
+								{
+									"key": "accountName",
+									"value": "ACCOUNT_A"
+								},
+								{
+									"key": "amount",
+									"value": "23.4"
+								},
+								{
+									"key": "sessionId",
+									"value": "{{sessionId}}"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -49,7 +134,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6",
+							"raw": "http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6&sessionId={{sessionId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -67,6 +152,10 @@
 								{
 									"key": "amount",
 									"value": "17.6"
+								},
+								{
+									"key": "sessionId",
+									"value": "{{sessionId}}"
 								}
 							]
 						}

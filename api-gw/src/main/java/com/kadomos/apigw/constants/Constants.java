@@ -40,6 +40,13 @@ public class Constants {
         String ACCOUNT_BALANCE = "account/balance";
         String ACCOUNT_TRANSACTION = "account/transaction";
     }
+
     public static final int REDIRECT_STATUS_CODE = 302;
     public static final int NOT_ALLOWED_STATUS_CODE = 405;
+
+    public static String SESSION_ID = "sessionId";
+
+    public interface ENVIRONMENT {
+        String AUTHENTICATION_ENABLED = "kadomos.authentication.enabled";
+    }
 }
