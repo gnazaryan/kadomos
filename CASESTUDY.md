@@ -62,4 +62,12 @@ Throughtpiut - is the ammount of data can pass through a network or connection w
 
 
 
-**Monitor uptime so you can sleep at night**
+**Monitoring uptime**
+
+Availability is one of the other most importance and critical factors of a distributed system, it is the time a system remains functional to perform its required task in a specific period. Most of the critical services employe tools to monitor the availability of the system. These monitoring tools collect mmetrics detailing the health of the system in a given point of time which actively passis throuigh analytics to provide robust alerting systems ensuring the resource is available, in case the mmonitoring observes system metrics not being helthy or missing it generates alerts and alarms the users through communication means.
+
+One of such basic tools is a Heartbeat System. A Heartbeat System is a peace of active process nested in the node being monitored which peridocally (in a predefined interval, every minute or 5 minutes) runs a self health status check inside a system to ensure services are running and sends the status information to the monitoring tool. 
+
+The monitoring tool itself does periodically check the status of the node and in case the status update is missing or the update is late it starts generating alerts and alarms the subscribed support to troublshoot the problem.
+
+
