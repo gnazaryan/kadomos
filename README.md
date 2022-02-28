@@ -26,7 +26,7 @@ On the other hand, there is also a Redirect version of the implementation which 
 
     
 
-5. In each application directory (api-gw, service-a, service-b) run the spring-boot:run command
+5. In each application directory (api-gw, service-a, service-b) run the spring-boot:run command on a separate terminal
 
 
     cd ./api-gw
@@ -66,11 +66,23 @@ Below you can see the details on how the testings can be performed.
     amount - 56.7
 
     
-    Balance using Passthrough - http://localhost:8080/savings/balance?accountName=ACCOUNT_A
+    Balance using Passthrough 
+    
+    http://localhost:8080/savings/balance?accountName=ACCOUNT_A 
+    
+    http://localhost:8080/savings/balance?accountName=ACCOUNT_B
 
-    Increase balance using Passthrough - http://localhost:8080/savings/increase?accountName=ACCOUNT_A&amount=17.6
+    Increase balance using Passthrough 
+    
+    http://localhost:8080/savings/increase?accountName=ACCOUNT_A&amount=17.6
+    
+    http://localhost:8080/savings/increase?accountName=ACCOUNT_B&amount=17.6
 
-    Decrease balance using Passthrough - http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6
+    Decrease balance using Passthrough 
+    
+    http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6
+    
+    http://localhost:8080/savings/decrease?accountName=ACCOUNT_B&amount=17.6
 
     
     
@@ -85,9 +97,17 @@ Below you can see the details on how the testings can be performed.
     type = DEBIT || CREDIT
 
     
-    Balance using redirect - http://localhost:8080/gateway/balance?accountName=ACCOUNT_A
+    Balance using redirect
+    
+    http://localhost:8080/gateway/balance?accountName=ACCOUNT_A
+    
+    http://localhost:8080/gateway/balance?accountName=ACCOUNT_B
 
-    Transaction using redirect - http://localhost:8080/gateway/transaction?accountName=ACCOUNT_A&description=Description&amount=26.6&type=CREDIT
+    Transaction using redirect
+    
+    http://localhost:8080/gateway/transaction?accountName=ACCOUNT_A&description=Description&amount=26.6&type=CREDIT
+
+    http://localhost:8080/gateway/transaction?accountName=ACCOUNT_B&description=Description&amount=26.6&type=CREDIT
 
 
 
