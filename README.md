@@ -45,6 +45,42 @@ On the other hand, there is also a Redirect version of the implementation which 
 
 **APPLICATION USAGE**
 
+**Authentication**
+
+As part of the case study a authentication is implemented to enhance the security of the services, which can be enabled and disabled through the properties configuration (kadomos/api-gw/src/main/resources/application.properties) by setting the kadomos.authentication.enabled to true (default enabled)
+
+The authentication is based on the session id generation per valis username and password supliment, the authentication api does generate a unique identifier representing the session and sends back to the client through the API
+
+
+**POST** request
+
+Parameters:
+
+username: root
+password: kadomos
+
+http://localhost:8080/authentication/authenticate
+
+
+This will return a json response including the authenticated sessionId
+
+        {
+            "success": true,
+            "error": "",
+            "sessionId": "8cf7f8c4-bfae-46e2-b22c-cf56a142681c"
+        }
+
+
+if you are using the Postman, it will automatically add the session Id to the request urls no need to manually add it
+
+
+Authentication is run with a **POST** request
+
+
+Otherwise if the api is run manually using a browser then the session id would need to be added to the get requesturl like you can see in below examples just replace the {{sessionId}} with the api returned sessionID
+ 
+
+
 Below you can see the details on how the testings can be performed.
 1. Recommended: Use Postman application (https://www.postman.com/) to import the request collection that was developed as part of the project. The Postman collection can be found in the following location in the project (kadomos/Kadomos.postman_collection.json). After making sure all servers are run import the Postman collection and sent requests to the api's.
 2. You can also try using the below url samples to execute api's on your convenient browser.
@@ -68,21 +104,21 @@ Below you can see the details on how the testings can be performed.
     
     Balance using Passthrough 
     
-    http://localhost:8080/savings/balance?accountName=ACCOUNT_A 
+    http://localhost:8080/savings/balance?accountName=ACCOUNT_A&sessionId={{sessionId}} 
     
-    http://localhost:8080/savings/balance?accountName=ACCOUNT_B
+    http://localhost:8080/savings/balance?accountName=ACCOUNT_B&sessionId={{sessionId}}
 
     Increase balance using Passthrough 
     
-    http://localhost:8080/savings/increase?accountName=ACCOUNT_A&amount=17.6
+    http://localhost:8080/savings/increase?accountName=ACCOUNT_A&amount=17.6&sessionId={{sessionId}}
     
-    http://localhost:8080/savings/increase?accountName=ACCOUNT_B&amount=17.6
+    http://localhost:8080/savings/increase?accountName=ACCOUNT_B&amount=17.6&sessionId={{sessionId}}
 
     Decrease balance using Passthrough 
     
-    http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6
+    http://localhost:8080/savings/decrease?accountName=ACCOUNT_A&amount=17.6&sessionId={{sessionId}}
     
-    http://localhost:8080/savings/decrease?accountName=ACCOUNT_B&amount=17.6
+    http://localhost:8080/savings/decrease?accountName=ACCOUNT_B&amount=17.6&sessionId={{sessionId}}
 
     
     
