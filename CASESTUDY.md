@@ -62,6 +62,9 @@ Throughtpiut - is the ammount of data can pass through a network or connection w
 
 
 
+
+
+
 **Monitoring uptime**
 
 Availability is one of the other most importance and critical factors of a distributed system, it is the time a system remains functional to perform its required task in a specific period. Most of the critical services employe tools to monitor the availability of the system. These monitoring tools collect mmetrics detailing the health of the system in a given point of time which actively passis throuigh analytics to provide robust alerting systems ensuring the resource is available, in case the mmonitoring observes system metrics not being helthy or missing it generates alerts and alarms the users through communication means.
