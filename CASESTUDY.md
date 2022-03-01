@@ -1,9 +1,9 @@
 **Scaling API gateway**
 
-Horizontal scaling of an application let's increase the Thoughoutput, Latency and Availability of the system, which ensures the critical to importance busness needs are met. In the typical case, the Api Gateway let's users manage the account which holds critically important financial securityies. 
+Horizontal scaling of an application let's increase the Thoughoutput, Latency and Availability of the system, which ensures the critical to importance busness needs are met, in a typical case, the Api Gateway let's users manage the account which holds critically important financial securityies. 
 
 
-Based on the case study details and implementation the current Api Gateway has a single server/node machinery structor as can be seen below. 
+According to case study details and implementation the current Api Gateway has a single server/node machinery structor as can be seen below. 
 
 1. 
 
@@ -16,7 +16,7 @@ Based on the case study details and implementation the current Api Gateway has a
 
 This structure is fine, until the business meets a new requirments to enhance the api accessability, particularly a typical business requirment could be to consider 1 million active user transactions per minute, in this case the single node structure would fail because of the over load.
 
-For this reason most commonly Load Balancer is used to distribute the work of the system. In some other cases architectures include several layers of load balancers, and the number of layers can be increased to support desired level of Latency and Throughoutput, a sample of such architecture can be seen below.
+For this reason most commonly a Load Balancer is used to distribute the work of the system. In some other cases, architectures include several layers of load balancers, and the number of layers can be increased to support desired level of Latency and Throughoutput. A sample of such architecture can be seen below.
 
 2. 
                                        
@@ -37,7 +37,7 @@ For this reason most commonly Load Balancer is used to distribute the work of th
     
 On the 1. Structure of architecture we can see a single instance of Api Gatway redirecting requests to Account A and Account B which limits the precessing power to the machinery underlying these 3 servers, On the other hand the 2. structure is more robust and employes many number of nodes serving the requests which would necessarily improve the latency and throughput. The top load balancer first accepts the request and basedon some load statistics dispatches to the second layer of load balancers which in turn dispatch to the target Api Gatway in hand based on some other statistical data or conditions. This ensures the requests are equally distributed through the distributed system, hence balancing the load.
     
-But this raises other concerns and questions, are we all set?, and the answer is kind of what did you expect, not really, if we assume the Account A nodes are servers which function on the same data, then we face concurrency and racing conditions. If multiple requests try executing a Debit transaction simultainusly in the below order, this may cause arithmetic errors in the balance calculation.
+But this raises other concerns and questions, are we all set?, and the answer is kind of what did you expect, not really, if we assume multiple Account A nodes are servers function on the same data, then it could potentially face concurrency and racing conditions. If multiple requests try executing a Debit transaction simultainusly on the same account like in the below order, this may cause arithmetic errors in the balance calculation.
 
         Request 1: Get Balance - 75 euro
         Request 2: Get Balance - 75 euro
@@ -71,7 +71,7 @@ Throughtpiut - is the ammount of data can pass through a network or connection w
 
 **Monitoring uptime**
 
-Availability is one of the other most importance and critical factors of a distributed system, it is the time a system remains functional to perform its required task in a specific period. Most of the critical services employe tools to monitor the availability of the system. These monitoring tools collect mmetrics detailing the health of the system in a given point of time which actively passis throuigh analytics to provide robust alerting systems ensuring the resource is available, in case the mmonitoring observes system metrics not being helthy or missing it generates alerts and alarms the users through communication means.
+Availability is one of the other important and critical factors of a distributed system, it is the time a system remains functional to perform its required task in a specific period of time. Most of the critical services employe tools to monitor the availability of the system. These monitoring tools collect mmetrics detailing the health of the system in a given point of time which actively passis throuigh analytics to provide robust alerting systems ensuring the resource is available, in case the mmonitoring observes system metrics not being helthy or missing it generates alerts and alarms the users through communication means.
 
 One of such basic tools is a Heartbeat System. A Heartbeat System is a peace of active process nested in the node being monitored which peridocally (in a predefined interval, every minute or 5 minutes) runs a self health status check inside a system to ensure services are running and sends the status information to the monitoring tool. 
 
