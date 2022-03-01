@@ -40,7 +40,9 @@ public class GatewayInterceptor implements HandlerInterceptor {
         /**
          * Allow users to access the authentication/authenticate api without any authentication
          */
-        if (applicationConfiguration.getProperty(Constants.ENVIRONMENT.AUTHENTICATION_ENABLED, Boolean.class) && !request.getRequestURL().toString().contains("authentication/authenticate")) {
+        if (applicationConfiguration.getProperty(Constants.ENVIRONMENT.AUTHENTICATION_ENABLED, Boolean.class) &&
+                !request.getRequestURL().toString().contains("authentication/authenticate") &&
+                !request.getRequestURL().toString().equals("http://localhost/")) {
             String sessionId[] = request.getParameterMap().get(Constants.SESSION_ID);
             if (sessionId.length > 0 && Convenience.hasValue(sessionId[0])) {
                 Boolean authenticated = false;
